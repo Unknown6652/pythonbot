@@ -1,5 +1,6 @@
 import discord
 import random
+import os
 import datetime
 import openpyxl
 from discord.ext import commands, tasks
@@ -126,5 +127,5 @@ async def on_message(message):
 @tasks.loop(seconds=5)
 async def change_message():
     await client.change_presence(activity=discord.Game(next(status)))
-
-client.run("Njk0Mzg0MTk3MjAwMTE3ODEz.Xtoa4w.WtNDgoKdq7TMu87epS9ORxyZ8oY")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
